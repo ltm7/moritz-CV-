@@ -1,0 +1,283 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-navy-900 text-white font-sans;
+  }
+  ::selection {
+    @apply bg-blue-500/30 text-white;
+  }
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  ::-webkit-scrollbar-track {
+    background: #030816;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-blue-600 rounded-full;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl;
+  }
+  .glass-card-hover {
+    @apply glass-card hover:bg-white/10 hover:border-blue-500/30 transition-all duration-500;
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-300 via-blue-400 to-blue-200;
+  }
+  .gradient-text-blue {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-blue-500;
+  }
+  .section-padding {
+    @apply py-24 px-4 md:px-8;
+  }
+  .glow-border {
+    position: relative;
+  }
+  .glow-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, #5599ff, #2e72ff, #1a56f5);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  .glow-border:hover::before {
+    opacity: 1;
+  }
+  .floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.12;
+    pointer-events: none;
+  }
+  .btn-primary {
+    @apply px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold rounded-xl
+    hover:from-blue-500 hover:to-blue-400 transition-all duration-300 shadow-lg shadow-blue-500/25
+    hover:shadow-blue-500/40 hover:-translate-y-0.5;
+  }
+  .btn-outline {
+    @apply px-8 py-3 border-2 border-blue-500/50 text-white font-semibold rounded-xl
+    hover:bg-blue-500/10 hover:border-blue-400 transition-all duration-300
+    hover:-translate-y-0.5;
+  }
+}
+
+/* Noise texture overlay */
+.noise-bg::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.02;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Animated background blobs */
+.bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.08;
+  pointer-events: none;
+  animation: morph 8s ease-in-out infinite;
+}
+
+.bg-blob-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #2e72ff, transparent);
+  top: -200px;
+  right: -200px;
+}
+
+.bg-blob-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #1a56f5, transparent);
+  bottom: -150px;
+  left: -150px;
+  animation-delay: -4s;
+}
+
+.bg-blob-3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #5599ff, transparent);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -2s;
+}
+
+/* Particle dots animation */
+@keyframes particleFloat {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(46,114,255,0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particleFloat linear infinite;
+}
+
+/* Shimmer effect for headings */
+.shimmer-text {
+  background: linear-gradient(90deg, #fff 0%, #5599ff 50%, #fff 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Blue glow orb */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(46,114,255,0.3), transparent 70%);
+  pointer-events: none;
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+/* Lightbox overlay */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(3, 8, 22, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 60px rgba(46, 114, 255, 0.2);
+}
+
+/* Morph animation for shapes */
+@keyframes morph {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+
+/* ═══════════════════════════════════════════════════
+   Custom cursor — dot in circle (inspired by alkhawli.com)
+   ═══════════════════════════════════════════════════ */
+.custom-cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(46, 114, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s, height 0.2s, border-color 0.2s, background 0.2s;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: #5599ff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s, height 0.15s, background 0.15s;
+}
+
+/* Hover state for interactive elements */
+.custom-cursor.hovering {
+  width: 60px;
+  height: 60px;
+  border-color: rgba(85, 153, 255, 0.8);
+  background: rgba(46, 114, 255, 0.05);
+}
+
+.custom-cursor-dot.hovering {
+  width: 4px;
+  height: 4px;
+}
+
+/* Hide default cursor everywhere */
+html.custom-cursor-enabled,
+html.custom-cursor-enabled * {
+  cursor: none !important;
+}
+
+/* ═══════════════════════════════════════════════════
+   Extra animated background shapes
+   ═══════════════════════════════════════════════════ */
+@keyframes floatDiag {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(30px, -20px) rotate(5deg); }
+  50% { transform: translate(-10px, -40px) rotate(-3deg); }
+  75% { transform: translate(-30px, -10px) rotate(2deg); }
+}
+
+@keyframes pulseFade {
+  0%, 100% { opacity: 0.05; transform: scale(1); }
+  50% { opacity: 0.15; transform: scale(1.15); }
+}
+
+@keyframes driftSlow {
+  0% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(40px) translateY(-20px); }
+  50% { transform: translateX(-20px) translateY(-40px); }
+  75% { transform: translateX(-40px) translateY(10px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+.anim-float-diag {
+  animation: floatDiag 12s ease-in-out infinite;
+}
+
+.anim-pulse-fade {
+  animation: pulseFade 6s ease-in-out infinite;
+}
+
+.anim-drift-slow {
+  animation: driftSlow 20s ease-in-out infinite;
+}
