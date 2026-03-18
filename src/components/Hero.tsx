@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaLinkedin, FaGoodreads, FaTimes } from "react-icons/fa";
 import { useI18n } from "@/lib/i18n-context";
 import { translations, t } from "@/lib/translations";
+import { withPrefix } from "@/lib/prefix";
 
 const socialLinks = [
   { icon: FaLinkedin, href: "https://www.linkedin.com/in/moritz-l-11551014b/", label: "LinkedIn" },
@@ -98,7 +99,7 @@ export default function Hero() {
               initial={{ scale: 0.5, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.5, opacity: 0 }}
-              src="/images/moritz2.png"
+              src={withPrefix("/images/moritz2.png")}
               alt="Moritz Leter Tchapder"
               className="w-72 h-72 md:w-96 md:h-96 rounded-full object-cover shadow-2xl shadow-blue-500/30 border-4 border-blue-500/30"
             />
@@ -128,7 +129,7 @@ export default function Hero() {
               className="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-400 via-blue-600 to-blue-300 opacity-80"
             />
             <div className="relative w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-navy-900 shadow-2xl shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
-              <img src="/images/moritz2.png" alt="Moritz Leter Tchapder" className="w-full h-full object-cover scale-110" />
+              <img src={withPrefix("/images/moritz2.png")} alt="Moritz Leter Tchapder" className="w-full h-full object-cover scale-110" />
             </div>
           </div>
         </motion.div>
@@ -172,7 +173,7 @@ export default function Hero() {
             {t(translations.hero.hireMe, locale)}
           </motion.a>
           <motion.a
-            href="/docs/CV%20Moritz-Leter.pdf"
+            href={withPrefix("/docs/CV%20Moritz-Leter.pdf")}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="btn-outline"

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useI18n } from "@/lib/i18n-context";
 import { translations, t, Locale } from "@/lib/translations";
+import { withPrefix } from "@/lib/prefix";
 
 const localeLabels: Record<Locale, { flag: string; short: string }> = {
   de: { flag: "\u{1F1E9}\u{1F1EA}", short: "DE" },
@@ -101,7 +102,7 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          <motion.a href="/docs/CV%20Moritz-Leter.pdf" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6 }} className="btn-primary text-sm !py-2 !px-5 ml-2 inline-block">
+          <motion.a href={withPrefix("/docs/CV%20Moritz-Leter.pdf")} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6 }} className="btn-primary text-sm !py-2 !px-5 ml-2 inline-block">
             {t(translations.nav.downloadCV, locale)}
           </motion.a>
         </div>
@@ -130,7 +131,7 @@ export default function Navbar() {
                 ))}
               </li>
               <li className="pt-2">
-                <a href="/docs/CV%20Moritz-Leter.pdf" className="btn-primary text-sm text-center block">{t(translations.nav.downloadCV, locale)}</a>
+                <a href={withPrefix("/docs/CV%20Moritz-Leter.pdf")} className="btn-primary text-sm text-center block">{t(translations.nav.downloadCV, locale)}</a>
               </li>
             </ul>
           </motion.div>

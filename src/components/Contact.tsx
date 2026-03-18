@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaPaperPlane } from "react-icons/fa";
 import { useI18n } from "@/lib/i18n-context";
 import { translations, t } from "@/lib/translations";
+import { withPrefix } from "@/lib/prefix";
 
 export default function Contact() {
   const { locale } = useI18n();
@@ -19,7 +20,7 @@ export default function Contact() {
   return (
     <section id="contact" className="section-padding relative bg-section-gradient-2" ref={ref}>
       <div className="absolute inset-0 z-0 opacity-5">
-        <img src="/images/staticmap.png" alt="" className="w-full h-full object-cover" />
+        <img src={withPrefix("/images/staticmap.png")} alt="" className="w-full h-full object-cover" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-navy-800/95 via-navy-900/98 to-navy-900 z-0" />
       <div className="max-w-5xl mx-auto relative z-10">

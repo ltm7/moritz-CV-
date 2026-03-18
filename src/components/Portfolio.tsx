@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { FaLaptopCode, FaCogs, FaFileAlt, FaExternalLinkAlt, FaPenFancy, FaCalendarAlt } from "react-icons/fa";
 import { useI18n } from "@/lib/i18n-context";
 import { translations, t, Locale } from "@/lib/translations";
+import { withPrefix } from "@/lib/prefix";
 
 const getTabs = (locale: Locale) => [
   { id: "programming", label: t(translations.portfolio.tabProgramming, locale), icon: FaLaptopCode },
@@ -30,24 +31,24 @@ const getProjects = (locale: Locale) => ({
       title: t(translations.portfolio.projects.b2b.title, locale),
       subtitle: "SS 2020",
       description: t(translations.portfolio.projects.b2b.description, locale),
-      image: "/images/project-1.jpg",
-      link: "/projects/b2b",
+      image: withPrefix("/images/project-1.jpg"),
+      link: withPrefix("/projects/b2b"),
       tags: ["HTML", "CSS", "JavaScript", "Bootstrap"],
     },
     {
       title: t(translations.portfolio.projects.mechashop.title, locale),
       subtitle: "SS 2020",
       description: t(translations.portfolio.projects.mechashop.description, locale),
-      image: "/images/project-2.jpg",
-      link: "/projects/php",
+      image: withPrefix("/images/project-2.jpg"),
+      link: withPrefix("/projects/php"),
       tags: ["PHP", "MySQL", "CSS", "Bootstrap"],
     },
     {
       title: t(translations.portfolio.projects.mindstorms.title, locale),
       subtitle: "WS 2019/20",
       description: t(translations.portfolio.projects.mindstorms.description, locale),
-      image: "/images/project-3.jpg",
-      link: "/projects/java",
+      image: withPrefix("/images/project-3.jpg"),
+      link: withPrefix("/projects/java"),
       tags: ["Java", "Robotics", "Automation"],
     },
   ],
@@ -56,24 +57,24 @@ const getProjects = (locale: Locale) => ({
       title: t(translations.portfolio.projects.zapfanlage.title, locale),
       subtitle: "SS 2019",
       description: t(translations.portfolio.projects.zapfanlage.description, locale),
-      image: "/images/project-4.jpg",
-      link: "/projects/nx",
+      image: withPrefix("/images/project-4.jpg"),
+      link: withPrefix("/projects/nx"),
       tags: ["NX Siemens", "CAD", "Mechanical Design"],
     },
     {
       title: t(translations.portfolio.projects.printer3d.title, locale),
       subtitle: "SS 2021",
       description: t(translations.portfolio.projects.printer3d.description, locale),
-      image: "/images/project-5.jpg",
-      link: "/projects/3dprint",
+      image: withPrefix("/images/project-5.jpg"),
+      link: withPrefix("/projects/3dprint"),
       tags: ["Additive Manufacturing", "5-Axis", "Research"],
     },
     {
       title: t(translations.portfolio.projects.fahrzeug.title, locale),
       subtitle: "FH Dortmund",
       description: t(translations.portfolio.projects.fahrzeug.description, locale),
-      image: "/images/explosion.png",
-      link: "/projects/fahrzeug",
+      image: withPrefix("/images/explosion.png"),
+      link: withPrefix("/projects/fahrzeug"),
       tags: ["SolidWorks", "3D Printing", "Prototype"],
     },
   ],
@@ -82,16 +83,16 @@ const getProjects = (locale: Locale) => ({
       title: t(translations.portfolio.projects.report3m.title, locale),
       subtitle: "2021",
       description: t(translations.portfolio.projects.report3m.description, locale),
-      image: "/report/werkstudentreport.jpg",
-      link: "/projects/reports",
+      image: withPrefix("/report/werkstudentreport.jpg"),
+      link: withPrefix("/projects/reports"),
       tags: ["Internship", "3M", "Engineering"],
     },
     {
       title: t(translations.portfolio.projects.certifications.title, locale),
       subtitle: locale === "de" ? "Verschiedene" : locale === "fr" ? "Divers" : "Various",
       description: t(translations.portfolio.projects.certifications.description, locale),
-      image: "/certificates/Certification.png",
-      link: "/projects/certificates",
+      image: withPrefix("/certificates/Certification.png"),
+      link: withPrefix("/projects/certificates"),
       tags: ["IIoT", "Industry 4.0", "GMP"],
     },
   ],
@@ -141,7 +142,7 @@ export default function Portfolio() {
                   {blogPosts.map((post, i) => (
                     <motion.a
                       key={post.slug}
-                      href={`/blog/${post.slug}`}
+                      href={withPrefix(`/blog/${post.slug}`)}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: i * 0.1 }}

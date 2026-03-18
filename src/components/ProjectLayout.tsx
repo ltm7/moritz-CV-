@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowLeft, FaDownload, FaPlay, FaTimes } from "react-icons/fa";
 import { useI18n } from "@/lib/i18n-context";
 import { translations, t } from "@/lib/translations";
+import { withPrefix } from "@/lib/prefix";
 
 interface MediaItem {
   type: "image" | "video" | "pdf" | "link";
@@ -20,7 +21,7 @@ interface ProjectLayoutProps {
   backHref?: string;
 }
 
-export default function ProjectLayout({ title, subtitle, description, tags, media, backHref = "/" }: ProjectLayoutProps) {
+export default function ProjectLayout({ title, subtitle, description, tags, media, backHref = withPrefix("/") }: ProjectLayoutProps) {
   const { locale } = useI18n();
   const tr = translations.projectPages;
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
@@ -94,16 +95,16 @@ export default function ProjectLayout({ title, subtitle, description, tags, medi
                 <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 + i * 0.1 }}>
                   {item.type === "video" && (
                     <div className="glass-card overflow-hidden">
-                      <video controls className="w-full" preload="metadata"><source src={item.src} type="video/mp4" /></video>
+                      <video controls className="w-full" preload="metadata"><source src={withPrefix(item.src)} type="video/mp4" /></video>
                       <div className="p-4"><p className="text-white text-sm flex items-center gap-2"><FaPlay size={10} className="text-blue-400" />{item.label}</p></div>
                     </div>
                   )}
                   {item.type === "image" && (
                     <div
                       className="glass-card overflow-hidden group cursor-zoom-in"
-                      onClick={() => setLightboxSrc(item.src)}
+                      onClick={() => setLightboxSrc(withPrefix(item.src))}
                     >
-                      <img src={item.src} alt={item.label} className="w-full h-64 object-contain bg-blue-500/5 group-hover:scale-105 transition-transform duration-500" />
+                      <img src={withPrefix(item.src)} alt={item.label} className="w-full h-64 object-contain bg-blue-500/5 group-hover:scale-105 transition-transform duration-500" />
                       <div className="p-4">
                         <p className="text-white text-sm">{item.label}</p>
                         <p className="text-blue-300/40 text-xs mt-1">{locale === "de" ? "Klicken zum Vergrößern" : locale === "fr" ? "Cliquer pour agrandir" : "Click to enlarge"}</p>
@@ -111,7 +112,7 @@ export default function ProjectLayout({ title, subtitle, description, tags, medi
                     </div>
                   )}
                   {item.type === "pdf" && (
-                    <a href={item.src} target="_blank" rel="noopener noreferrer" className="glass-card-hover p-6 flex items-center gap-4 block">
+                    <a href={withPrefix(item.src)} target="_blank" rel="noopener noreferrer" className="glass-card-hover p-6 flex items-center gap-4 block">
                       <div className="w-14 h-14 rounded-xl bg-blue-500/20 flex items-center justify-center flex-shrink-0"><FaDownload className="text-blue-400" size={20} /></div>
                       <div><p className="text-white font-medium">{item.label}</p><p className="text-blue-300/40 text-xs mt-1">{t(tr.clickToDownload, locale)}</p></div>
                     </a>
