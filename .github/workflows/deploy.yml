@@ -39,7 +39,19 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /Moritz-CV-
 
       - name: Check output directory
-        run: ls -la ./out || echo "Output directory not found"
+        run: |
+          if [ -d "./out" ]; then
+            echo "=== Output Directory Size ==="
+            du -sh ./out
+            echo ""
+            echo "=== Largest Files ==="
+            find ./out -type f -size +1M -exec ls -lh {} \; | awk '{print $5, $9}' | sort -rh | head -20
+            echo ""
+            echo "=== Total File Count ==="
+            find ./out -type f | wc -l
+          else
+            echo "Output directory not found"
+          fi
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
