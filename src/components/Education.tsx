@@ -31,18 +31,35 @@ export default function Education() {
         </motion.div>
 
         <div className="relative">
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-blue-400 to-blue-300 md:-translate-x-px" />
+          {/* Timeline vertical line */}
+          <div className="absolute left-5 sm:left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-blue-400 to-blue-300 md:-translate-x-px" />
           {timeline.map((item, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: i * 0.15 }} className={`relative flex items-start gap-8 mb-12 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-              <div className="absolute left-8 md:left-1/2 -translate-x-1/2 z-10">
-                <motion.div initial={{ scale: 0 }} animate={inView ? { scale: 1 } : {}} transition={{ delay: i * 0.15 + 0.3, type: "spring" }} className={`w-10 h-10 rounded-full ${dotColors[i]} flex items-center justify-center text-lg shadow-lg shadow-blue-500/20 border-4 border-navy-900`}>
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 40 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: i * 0.15 }}
+              className={`relative flex items-start gap-8 mb-10 sm:mb-12 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+            >
+              {/* Timeline dot */}
+              <div className="absolute left-5 sm:left-8 md:left-1/2 -translate-x-1/2 z-10">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={inView ? { scale: 1 } : {}}
+                  transition={{ delay: i * 0.15 + 0.3, type: "spring" }}
+                  className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full ${dotColors[i]} flex items-center justify-center text-base sm:text-lg shadow-lg shadow-blue-500/20 border-4 border-navy-900`}
+                >
                   {icons[i]}
                 </motion.div>
               </div>
-              <div className={`ml-20 md:ml-0 md:w-[calc(50%-40px)] ${i % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8"}`}>
-                <motion.div whileHover={{ scale: 1.02 }} className={`glass-card-hover p-6 border-l-4 md:border-l-0 ${i % 2 === 0 ? `md:border-r-4 ${blueShades[i]}` : `md:border-l-4 ${blueShades[i]}`} ${blueShades[i]}`}>
+              {/* Card */}
+              <div className={`ml-14 sm:ml-20 md:ml-0 md:w-[calc(50%-40px)] ${i % 2 === 0 ? "md:pr-8 md:text-right" : "md:pl-8"}`}>
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  className={`glass-card-hover p-4 sm:p-6 border-l-4 md:border-l-0 ${i % 2 === 0 ? `md:border-r-4 ${blueShades[i]}` : `md:border-l-4 ${blueShades[i]}`} ${blueShades[i]}`}
+                >
                   <span className="text-xs font-mono text-blue-300/50 tracking-wider">{t(item.period, locale)}</span>
-                  <h3 className="text-lg font-display font-semibold text-white mt-1">{t(item.title, locale)}</h3>
+                  <h3 className="text-base sm:text-lg font-display font-semibold text-white mt-1">{t(item.title, locale)}</h3>
                   <p className="text-sm text-blue-400 font-medium mt-1">{t(item.subtitle, locale)}</p>
                   <p className="text-blue-100/60 text-sm mt-3 leading-relaxed">{t(item.description, locale)}</p>
                 </motion.div>

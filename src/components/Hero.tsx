@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaLinkedin, FaGoodreads, FaTimes } from "react-icons/fa";
 import { useI18n } from "@/lib/i18n-context";
@@ -10,20 +10,44 @@ const socialLinks = [
   { icon: FaGoodreads, href: "https://www.goodreads.com/user/show/81548351-moritz", label: "Goodreads" },
 ];
 
+type ParticleData = {
+  left: number;
+  top: number;
+  width: number;
+  height: number;
+  animationDuration: number;
+  animationDelay: number;
+};
+
 function Particles() {
+  const [particles, setParticles] = useState<ParticleData[]>([]);
+
+  useEffect(() => {
+    setParticles(
+      Array.from({ length: 40 }).map(() => ({
+        left: Math.random() * 100,
+        top: Math.random() * 100,
+        width: Math.random() * 3 + 1,
+        height: Math.random() * 3 + 1,
+        animationDuration: Math.random() * 15 + 10,
+        animationDelay: Math.random() * 10,
+      }))
+    );
+  }, []);
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {Array.from({ length: 40 }).map((_, i) => (
+      {particles.map((p, i) => (
         <div
           key={i}
           className="particle"
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            width: `${Math.random() * 3 + 1}px`,
-            height: `${Math.random() * 3 + 1}px`,
-            animationDuration: `${Math.random() * 15 + 10}s`,
-            animationDelay: `${Math.random() * 10}s`,
+            left: `${p.left}%`,
+            top: `${p.top}%`,
+            width: `${p.width}px`,
+            height: `${p.height}px`,
+            animationDuration: `${p.animationDuration}s`,
+            animationDelay: `${p.animationDelay}s`,
           }}
         />
       ))}
@@ -103,7 +127,7 @@ export default function Hero() {
               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
               className="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-400 via-blue-600 to-blue-300 opacity-80"
             />
-            <div className="relative w-52 h-52 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-navy-900 shadow-2xl shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
+            <div className="relative w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-navy-900 shadow-2xl shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
               <img src="/images/moritz2.png" alt="Moritz Leter Tchapder" className="w-full h-full object-cover scale-110" />
             </div>
           </div>
@@ -114,7 +138,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-4"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-4"
         >
           <span className="text-white">Moritz </span>
           <span className="gradient-text">Leter Tchapder</span>
@@ -127,7 +151,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="mb-8"
         >
-          <span className="inline-block px-6 py-2 rounded-full bg-blue-500/10 backdrop-blur-sm border border-blue-500/20 text-blue-100 font-medium text-lg">
+          <span className="inline-block px-4 sm:px-6 py-2 rounded-full bg-blue-500/10 backdrop-blur-sm border border-blue-500/20 text-blue-100 font-medium text-base sm:text-lg">
             {t(translations.hero.title, locale)}
           </span>
         </motion.div>
@@ -137,7 +161,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-10 sm:mb-12 px-4 sm:px-0"
         >
           <motion.a
             href="#contact"

@@ -26,9 +26,9 @@ export const translations = {
     sectionTitle2: { de: "mich", fr: "moi", en: "Me" },
     hello: { de: "Hallo!", fr: "Bonjour !", en: "Hello!" },
     paragraph1: {
-      de: "Mein Name ist Moritz Leter Tchapder. Strategisches Denken, Genauigkeit und organisatorische Fähigkeiten zähle ich zu meinen besonderen Stärken.",
-      fr: "Je m'appelle Moritz Leter Tchapder. La réflexion stratégique, la précision et les compétences organisationnelles sont des forces que je considère spécifiques.",
-      en: "My name is Moritz Leter Tchapder. I consider strategic thinking, accuracy and organizational skills to be specific strengths of mine.",
+      de: "Mein Name ist Moritz Leter Tchapder. Ich studiere Maschinenbau an der RWTH Aachen. Strategisches Denken, Genauigkeit und organisatorische Fähigkeiten zähle ich zu meinen besonderen Stärken.",
+      fr: "Je m'appelle Moritz Leter Tchapder. Je suis étudiant en génie mécanique à l'Université RWTH d'Aix-la-Chapelle. La réflexion stratégique, la précision et les compétences organisationnelles sont des forces que je considère spécifiques.",
+      en: "My name is Moritz Leter Tchapder. I am a student at the RWTH Aachen University studying mechanical engineering. I consider strategic thinking, accuracy and organizational skills to be specific strengths of mine.",
     },
     paragraph2: {
       de: "Ehrgeizig, flexibel und teamfähig sehe ich Aufgaben als Herausforderungen und nehme sie gerne an. Ich habe ein starkes Interesse an der Konstruktion von Mechanismen und Strukturen. Ursprünglich leidenschaftlich für die Entwicklung mechanischer und elektrischer Produkte, interessiere ich mich auch sehr für die Produktionssysteme sowie die dazu verbundene aktuelle Herausforderungen.",

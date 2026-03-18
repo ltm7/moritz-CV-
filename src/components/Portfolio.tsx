@@ -118,10 +118,10 @@ export default function Portfolio() {
           <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-blue-300 mx-auto rounded-full" />
         </motion.div>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.2 }} className="flex flex-wrap justify-center gap-3 mb-12">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.2 }} className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 sm:mb-12">
           {tabs.map((tab) => (
-            <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={`flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-sm transition-all duration-300 ${activeTab === tab.id ? "bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg shadow-blue-500/25" : "bg-blue-500/5 text-blue-200/60 hover:text-white hover:bg-blue-500/10 border border-blue-500/10"}`}>
-              <tab.icon size={16} />{tab.label}
+            <button key={tab.id} onClick={() => setActiveTab(tab.id)} className={`flex items-center gap-1.5 sm:gap-2 px-3 sm:px-6 py-2 sm:py-3 rounded-xl font-medium text-xs sm:text-sm transition-all duration-300 ${activeTab === tab.id ? "bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg shadow-blue-500/25" : "bg-blue-500/5 text-blue-200/60 hover:text-white hover:bg-blue-500/10 border border-blue-500/10"}`}>
+              <tab.icon size={14} />{tab.label}
             </button>
           ))}
         </motion.div>
@@ -162,7 +162,7 @@ export default function Portfolio() {
               )}
             </motion.div>
           ) : (
-            <motion.div key={activeTab} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.4 }} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <motion.div key={activeTab} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.4 }} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {projects[activeTab as keyof typeof projects]?.map((project, i) => (
                 <motion.a key={project.title} href={project.link} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} whileHover={{ y: -8 }} className="group glass-card overflow-hidden glow-border block">
                   <div className="relative h-48 overflow-hidden">

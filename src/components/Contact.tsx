@@ -13,7 +13,7 @@ export default function Contact() {
   const contactInfo = [
     { icon: FaMapMarkerAlt, label: t(tr.address, locale), value: "Emdenstrasse 26, 42697 Solingen, Germany", color: "from-blue-600 to-blue-500" },
     { icon: FaPhone, label: t(tr.phone, locale), value: "+4917658818002", color: "from-blue-500 to-blue-400" },
-    { icon: FaEnvelope, label: t(tr.email, locale), value: "moritzleter@gmail.com", color: "from-blue-400 to-blue-300" },
+    { icon: FaEnvelope, label: t(tr.email, locale), value: "moritzleter9@gmail.com", color: "from-blue-400 to-blue-300" },
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function Contact() {
         </div>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.5 }} className="text-center mt-12">
           <motion.a
-            href="mailto:moritzleter@gmail.com"
+            href="mailto:moritzleter9@gmail.com"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="btn-primary inline-flex items-center gap-3 text-lg"

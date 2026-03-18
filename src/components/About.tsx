@@ -12,7 +12,7 @@ export default function About() {
 
   const infoItems = [
     { icon: FaBirthdayCake, label: t(tr.age, locale), value: "27", color: "text-blue-400" },
-    { icon: FaEnvelope, label: t(tr.email, locale), value: "moritzleter@gmail.com", color: "text-blue-300" },
+    { icon: FaEnvelope, label: t(tr.email, locale), value: "moritzleter9@gmail.com", color: "text-blue-300" },
     { icon: FaPhone, label: t(tr.phone, locale), value: "+4917658818002", color: "text-blue-400" },
     { icon: FaMapMarkerAlt, label: t(tr.address, locale), value: "Emdenstrasse 26, 42697 Solingen, Germany", color: "text-blue-300" },
     { icon: FaLanguage, label: t(tr.languages, locale), value: t(tr.languagesValue, locale), color: "text-blue-400" },
