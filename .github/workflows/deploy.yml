@@ -69,6 +69,14 @@ jobs:
             echo "Hard links resolved"
           fi
 
+      - name: Copy videos after build
+        run: |
+          if [ -d "./public/videos" ] && [ -d "./out" ]; then
+            mkdir -p ./out/videos
+            cp -r ./public/videos/*.mp4 ./out/videos/ 2>/dev/null || true
+            echo "Videos copied to output"
+          fi
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
