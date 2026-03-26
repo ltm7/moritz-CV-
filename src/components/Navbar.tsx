@@ -102,7 +102,7 @@ export default function Navbar() {
             </AnimatePresence>
           </div>
 
-          <motion.a href={withPrefix("/docs/CV%20Moritz-Leter.pdf")} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6 }} className="btn-primary text-sm !py-2 !px-5 ml-2 inline-block">
+          <motion.a href={withPrefix("/docs/CV_Moritz_Leter_new.pdf")} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6 }} className="btn-primary text-sm !py-2 !px-5 ml-2 inline-block">
             {t(translations.nav.downloadCV, locale)}
           </motion.a>
         </div>
@@ -131,7 +131,7 @@ export default function Navbar() {
                 ))}
               </li>
               <li className="pt-2">
-                <a href={withPrefix("/docs/CV%20Moritz-Leter.pdf")} className="btn-primary text-sm text-center block">{t(translations.nav.downloadCV, locale)}</a>
+                <a href={withPrefix("/docs/CV_Moritz_Leter_new.pdf")} className="btn-primary text-sm text-center block">{t(translations.nav.downloadCV, locale)}</a>
               </li>
             </ul>
           </motion.div>

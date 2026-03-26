@@ -173,7 +173,7 @@ export default function Hero() {
             {t(translations.hero.hireMe, locale)}
           </motion.a>
           <motion.a
-            href={withPrefix("/docs/CV%20Moritz-Leter.pdf")}
+            href={withPrefix("/docs/CV_Moritz_Leter_new.pdf")}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="btn-outline"
