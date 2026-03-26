@@ -77,6 +77,14 @@ const getProjects = (locale: Locale) => ({
       link: withPrefix("/projects/fahrzeug"),
       tags: ["SolidWorks", "3D Printing", "Prototype"],
     },
+    {
+      title: t(translations.portfolio.projects.produktionsplanung.title, locale),
+      subtitle: "Excel",
+      description: t(translations.portfolio.projects.produktionsplanung.description, locale),
+      image: withPrefix("/images/project-excel.jpg"),
+      link: withPrefix("/projects/produktionsplanung"),
+      tags: ["Excel", "Production Planning", "OEE"],
+    },
   ],
   reports: [
     {

@@ -115,6 +115,14 @@ export const translations = {
           en: "3D-printed rubber-band powered truck with gear and axle system, designed using SolidWorks at FH Dortmund.",
         },
       },
+      produktionsplanung: {
+        title: { de: "Produktionsplanungssystem", fr: "Système de planification de production", en: "Production Planning System" },
+        description: {
+          de: "Strukturiertes Excel-Tool zur Produktionsplanung in der Endmontage von Motoren. Verknüpfung von Aufträgen, Prozesszeiten und OEE-Kennzahlen.",
+          fr: "Outil Excel structuré pour la planification de la production en assemblage final de moteurs. Liaison entre commandes, temps de processus et indicateurs OEE.",
+          en: "Structured Excel tool for production planning in engine final assembly. Linking orders, process times and OEE indicators.",
+        },
+      },
       report3m: {
         title: { de: "Arbeitsbericht bei 3M", fr: "Rapport de travail chez 3M", en: "Work Report at 3M" },
         description: {
@@ -126,9 +134,9 @@ export const translations = {
       certifications: {
         title: { de: "Zertifizierungen", fr: "Certifications", en: "Certifications" },
         description: {
-          de: "Sammlung professioneller Zertifizierungen: IIoT-Minikurs und Life-Science-Fertigungspraktiken.",
-          fr: "Collection de certifications professionnelles : mini-cours IIoT et pratiques de fabrication Life-Science.",
-          en: "Collection of professional certifications including IIoT Minicourse and Life-Science Manufacturing practices.",
+          de: "Sammlung professioneller Zertifizierungen: IIoT-Minikurs und CAD-Zertifikat.",
+          fr: "Collection de certifications professionnelles : mini-cours IIoT et certificat CAD.",
+          en: "Collection of professional certifications including IIoT Minicourse and CAD Certificate.",
         },
       },
     },
@@ -273,13 +281,23 @@ export const translations = {
         en: "This project involves the design, modeling and 3D printing of a rubber-band powered truck model. The vehicle was fully designed in SolidWorks and manufactured using an FDM 3D printer.\n\nThe propulsion system uses a rubber band that drives the rear wheels through a gear and axle system. The prototype demonstrates principles of mechanics, gear transmission and parametric CAD design.\n\nAll components were exported as STL files and can be reproduced with standard 3D printers.",
       },
     },
+    produktionsplanung: {
+      title: { de: "Produktionsplanungssystem (Excel)", fr: "Système de planification de production (Excel)", en: "Production Planning System (Excel)" },
+      subtitle: { de: "Excel & Produktionsplanung", fr: "Excel & Planification de production", en: "Excel & Production Planning" },
+      description: {
+        de: "Annahme: Wir stellen Motoren für verschiedene Autohersteller her.\n\nDiese Excel-Datei stellt ein strukturiertes Werkzeug zur Produktionsplanung dar, das in der Endmontage eingesetzt wird. Es handelt sich um ein umfassendes System, das verschiedene Informationen miteinander verknüpft, um die Produktion effizient zu organisieren.\n\nDas Tabellenblatt „Aufträge" bildet die Grundlage der Planung mit Produktionsaufträgen, Produktnummern, Zeitfenstern und verfügbaren Arbeitszeiten.\n\nDie Tabelle „Prozesszeit" liefert wichtige technische Informationen über die Dauer der Herstellung einzelner Produkte, entscheidend für die Kapazitätsberechnung.\n\nIm Tabellenblatt „Bestellung_Produktionsdatum" werden die Aufträge zeitlich eingeordnet und mit konkreten Produktionsdaten und Uhrzeiten verbunden.\n\nDas Tabellenblatt „Planning" ist das zentrale Element: ein detaillierter Produktionskalender, der alle Informationen zusammenführt.\n\nDie Tabelle „APE und OEE" dient der Bewertung der Produktionsleistung mit Kennzahlen wie der OEE (Overall Equipment Effectiveness).\n\nDieses Projekt wurde auch durchgeführt, um meine Excel-Fähigkeiten zu verbessern.",
+        fr: "Hypothèse : Nous fabriquons des moteurs pour différents constructeurs automobiles.\n\nCe fichier Excel représente un outil structuré de planification de production utilisé en assemblage final. C'est un système complet qui relie différentes informations pour organiser efficacement la production.\n\nL'onglet « Aufträge » constitue la base de la planification avec les ordres de production, numéros de produits, créneaux horaires et temps de travail disponibles.\n\nLa table « Prozesszeit » fournit des informations techniques sur la durée de fabrication de chaque produit, essentielles au calcul de capacité.\n\nL'onglet « Bestellung_Produktionsdatum » classe les commandes chronologiquement avec des dates et heures de production concrètes.\n\nL'onglet « Planning » est l'élément central : un calendrier de production détaillé réunissant toutes les informations.\n\nLa table « APE und OEE » évalue la performance de production avec des indicateurs comme l'OEE (Overall Equipment Effectiveness).\n\nCe projet a également été réalisé pour améliorer mes compétences Excel.",
+        en: "Assumption: We manufacture engines for various car manufacturers.\n\nThis Excel file represents a structured production planning tool used in final assembly. It is a comprehensive system that links different information to efficiently organize production.\n\nThe 'Aufträge' sheet forms the basis of planning with production orders, product numbers, time slots and available working hours.\n\nThe 'Prozesszeit' table provides technical information about manufacturing duration for each product, crucial for capacity calculation.\n\nThe 'Bestellung_Produktionsdatum' sheet orders assignments chronologically with concrete production dates and times.\n\nThe 'Planning' sheet is the central element: a detailed production calendar bringing all information together.\n\nThe 'APE und OEE' table evaluates production performance with KPIs like OEE (Overall Equipment Effectiveness).\n\nThis project was also carried out to improve my Excel skills.",
+      },
+      fileLabel: { de: "Produktionsplanungs-Datei (Excel)", fr: "Fichier de planification (Excel)", en: "Production Planning File (Excel)" },
+    },
     certificates: {
       title: { de: "Professionelle Zertifizierungen", fr: "Certifications Professionnelles", en: "Professional Certifications" },
       subtitle: { de: "Kontinuierliches Lernen", fr: "Apprentissage continu", en: "Continuous Learning" },
       description: {
-        de: "Eine Sammlung professioneller Zertifizierungen zur Erweiterung der Expertise in modernen Industrietechnologien.\n\nIIoT-Minikurs: Zertifizierung über die Grundlagen des Industrial Internet of Things (IIoT) und Industrie 4.0 mit einem Überblick über aktuelle Themen der Industriedigitalisierung.\n\nLife-Science-Minikurs: Schwerpunkt auf Good Manufacturing Practice (GMP) und Good Laboratory Practice (GLP). Gesundheitsvorschriften und deren Anwendung in der Herstellung und dem Vertrieb pharmazeutischer Produkte.",
-        fr: "Une collection de certifications professionnelles pour élargir l'expertise dans les technologies industrielles modernes.\n\nMini-cours IIoT : Certification sur les bases de l'Internet Industriel des Objets (IIoT) et de l'Industrie 4.0, avec une vue d'ensemble des sujets actuels de la digitalisation industrielle.\n\nMini-cours Life-Science : Centré sur les Bonnes Pratiques de Fabrication (BPF) et les Bonnes Pratiques de Laboratoire (BPL).",
-        en: "A collection of professional certifications to broaden expertise in modern industry technologies.\n\nIIoT Minicourse: Certification on the basics of Industrial Internet of Things (IIoT) and Industry 4.0, providing an overview of current topics related to the digitalization of industry.\n\nLife-Science Minicourse: Focused on Good Manufacturing Practice (GMP) and Good Laboratory Practice (GLP).",
+        de: "Eine Sammlung professioneller Zertifizierungen zur Erweiterung der Expertise in modernen Industrietechnologien.\n\nIIoT-Minikurs: Zertifizierung über die Grundlagen des Industrial Internet of Things (IIoT) und Industrie 4.0 mit einem Überblick über aktuelle Themen der Industriedigitalisierung.\n\nCAD-Zertifikat: Nachweis von Kompetenzen im Bereich Computer-Aided Design.",
+        fr: "Une collection de certifications professionnelles pour élargir l'expertise dans les technologies industrielles modernes.\n\nMini-cours IIoT : Certification sur les bases de l'Internet Industriel des Objets (IIoT) et de l'Industrie 4.0, avec une vue d'ensemble des sujets actuels de la digitalisation industrielle.\n\nCertificat CAD : Attestation de compétences en conception assistée par ordinateur.",
+        en: "A collection of professional certifications to broaden expertise in modern industry technologies.\n\nIIoT Minicourse: Certification on the basics of Industrial Internet of Things (IIoT) and Industry 4.0, providing an overview of current topics related to the digitalization of industry.\n\nCAD Certificate: Proof of competence in Computer-Aided Design.",
       },
     },
     reports: {
