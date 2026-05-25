@@ -100,7 +100,7 @@ export default function Hero() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.5, opacity: 0 }}
               src={withPrefix("/images/moritz2.png")}
-              alt="Moritz Leter Tchapder"
+              alt="Moritz"
               className="w-72 h-72 md:w-96 md:h-96 rounded-full object-cover shadow-2xl shadow-blue-500/30 border-4 border-blue-500/30"
             />
             <button
@@ -129,7 +129,7 @@ export default function Hero() {
               className="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-400 via-blue-600 to-blue-300 opacity-80"
             />
             <div className="relative w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-navy-900 shadow-2xl shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
-              <img src={withPrefix("/images/moritz2.png")} alt="Moritz Leter Tchapder" className="w-full h-full object-cover scale-110" />
+              <img src={withPrefix("/images/moritz2.png")} alt="Moritz" className="w-full h-full object-cover scale-110" />
             </div>
           </div>
         </motion.div>
@@ -141,8 +141,8 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-4"
         >
-          <span className="text-white">Moritz </span>
-          <span className="gradient-text">Leter Tchapder</span>
+          <span className="text-white">Hey ich bin </span>
+          <span className="gradient-text">Moritz</span>
         </motion.h1>
 
         {/* Title badge */}
