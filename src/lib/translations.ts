@@ -26,8 +26,8 @@ export const translations = {
     sectionTitle2: { de: "mich", fr: "moi", en: "Me" },
     hello: { de: "Hallo!", fr: "Bonjour !", en: "Hello!" },
     paragraph1: {
-      de: "Mein Name ist Moritz Leter Tchapder. Ich studiere Maschinenbau. Strategisches Denken, Genauigkeit und organisatorische Fähigkeiten zähle ich zu meinen besonderen Stärken.",
-      fr: "Je m'appelle Moritz Leter Tchapder. Je suis étudiant en génie mécanique. La réflexion stratégique, la précision et les compétences organisationnelles sont des forces que je considère spécifiques.",
+      de: "Mein Name ist Moritz. Ich studiere Maschinenbau. Strategisches Denken, Genauigkeit und organisatorische Fähigkeiten zähle ich zu meinen besonderen Stärken.",
+      fr: "Je m'appelle Moritz. Je suis étudiant en génie mécanique. La réflexion stratégique, la précision et les compétences organisationnelles sont des forces que je considère spécifiques.",
       en: "My name is Moritz Leter Tchapder. I am a student studying mechanical engineering. I consider strategic thinking, accuracy and organizational skills to be specific strengths of mine.",
     },
     paragraph2: {
