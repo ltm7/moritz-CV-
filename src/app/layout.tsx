@@ -3,7 +3,8 @@ import "./globals.css";
 import { I18nProvider } from "@/lib/i18n-context";
 
 export const metadata: Metadata = {
-  title: "Moritz Leter Tchapder | Portfolio",
+  robots: { index: false, follow: false }
+  title: "Moritz  | Portfolio",
   description: "Maschinenbau-Student & Entwickler — Portfolio mit Projekten, Kompetenzen und akademischem Werdegang.",
   icons: { icon: "/favicon.ico" },
 };
