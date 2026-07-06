@@ -172,14 +172,6 @@ export default function Hero() {
           >
             {t(translations.hero.hireMe, locale)}
           </motion.a>
-          <motion.a
-            href={withPrefix("/docs/CV_Moritz_Leter_new.pdf")}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="btn-outline"
-          >
-            {t(translations.hero.downloadCV, locale)}
-          </motion.a>
         </motion.div>
 
         {/* Social links — only LinkedIn and Goodreads */}
