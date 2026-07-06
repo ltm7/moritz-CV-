@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Portfolio from "@/components/Portfolio";
-import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
@@ -20,7 +19,6 @@ export default function Home() {
       <About />
       <Skills />
       <Portfolio />
-      <Education />
       <Contact />
       <Footer />
     </main>
